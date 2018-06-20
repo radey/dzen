@@ -1,0 +1,72 @@
+body {
+    background-image: url("images/back.png");
+}
+.material-icons {
+    color: #0910dd;
+}
+.menushka {
+    vertical-align: middle;
+    height: 70px;
+}
+.activated {
+    background-color: orangered;
+}
+.activated2 {
+    color: red;
+    font-weight: bold;
+}
+.mouseover {
+    background-color: #d8a310;
+}
+.row {
+    margin-bottom: 0px;
+}
+#footer {
+    text-align: center;
+}
+marquee #begaet {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+}
+.gif {
+    height: 450px;
+}
+
+.leftmenu {
+ //   background-color: #27ffa5;
+    height: 520px;
+}
+.beg {
+    padding: 0px;
+}
+.mydiv {
+    border: 5px dashed midnightblue;
+    background-color: greenyellow;
+    }
+#handler {
+     position: relative;
+     top : 20px;
+     height: 30px;
+     vertical-align: bottom;
+ }
+#startTimer {
+    position: relative;
+    top : 10px;
+}
+.chip {
+    width: 100%;
+    background-color: #9fff79;
+}
+.modal-container {
+    background: #00000088;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

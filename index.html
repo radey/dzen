@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<div class="modal-container hide" id="welcome">
+    <div class="add-modal">
+        <div class="card" style="background-image: url('images/back2.png')">
+            <h5 class="welcome" style="font-family:Pasifico; font-weight: bolder" align="center"><i>Здравствуйте!<br>
+                Рады что вы воспользовались нашим приложением.<br>
+                Надеемся оно подарит вам покой и душевное равновесие.<br>
+                Перед использованием прочтите пожалуйста, короткую инструкцию.<br>
+                В Playlist указаны композиции и их последовательность.<br>
+                Под анимированной картинкой расположено меню плеера.<br>
+                Можно просто проигрывать композиции и<br>
+                смотреть анимацию. (Картинка увеличивается).<br>
+                Либо вы можете нажать на кнопку c "Будда" и выбрать время медитации.<br>
+                Запустится таймер. По окончании которого прозвучит сигнал.<br>
+                Для продолжения работы нажмите "Продолжить"</i></h5>
+            <button id="hideWelcome" class="waves-effect waves-light btn red">Продолжить</button>
+        </div>
+    </div>
+</div>
+<div class="modal-container hide" id="timerShow">
+    <div class="add-modal">
+        <div class="card">
+            <div class="card-content">
+                <button id="add5" class="waves-effect waves-light btn red">
+                    5 min
+                </button>
+                <button id="add10" class="waves-effect waves-light btn green">
+                    10 min
+                </button>
+                <button id="add15" class="waves-effect waves-light btn orange">
+                    15 min
+                </button>
+                <button id="cancel" class="waves-effect waves-teal btn-flat right">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12 m7 l7">
+            <h4><i style="font-family:Lobster">Атмосфера Дзэн</i></h4>
+        </div>
+        <div class="col s12 m2 l2">
+            <h4 id="timer" style="font-family:Permanent+Marker">00.00</h4>
+        </div>
+        <div class="col s12 m1 l1" style="vertical-align: baseline">
+            <img src="images/buddha.png" width="50" height="50" title="TIMER MEDITATION" id="startTimer">
+        </div>
+        <div class="col s12 m2 l2">
+            <h4 id="clock">00.00</h4>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+        <div class="col s12 m12 l12 beg">
+            <h5>
+                <marquee id="begaet">Если ты устал или напряжен. Надень наушники и нажми Play ;)</marquee>
+            </h5>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+        <div class="col s12 m5 l4 leftmenu">
+            <div class="row">
+                <div class="col s12 m12 l12" align="center">
+                    <h5>Playlist</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l12" id="leftmenu">
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m7 l8">
+            <div class="row">
+                <div align="center" class="col s12 m12 l12 gif">
+                    <img class="materialboxed" src="images/space2.gif" id="playImg" height="450px" width="100%" alt="">
+                </div>
+            </div>
+            <!--<div class="divider"></div>-->
+            <div class="row menushka">
+                <div class="col s6 m6" align="center" id="handler">
+                    <a href="#"><i class="material-icons small mybut" title="Предыдущая песня" id="prev">fast_rewind</i></a>
+                    <a href="#"><i class="material-icons small mybut" title="Воспроизведение"
+                                   id="play">play_arrow</i></a>
+                    <a href="#"><i class="material-icons small mybut hide" title="Пауза" id="pause">pause</i></a>
+                    <a href="#"><i class="material-icons small mybut" title="Следующая песня" id="next">fast_forward</i></a>
+                    <a href="#"><i class="material-icons small mybut" title="Повтор композиций"
+                                   id="repeat">repeat</i></a>
+                    <a href="#"><i class="material-icons small hide" id="mute">volume_off</i></a>
+                </div>
+                <div class="col s3 m3">
+                    <h4 id="duration">00.00</h4>
+                </div>
+                <div class="col s3 m3">
+                    <form action="#">
+                        <p class="range-field">
+                            <input id="volume" title="Громкость" type="range" min="0" max="10"/>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+        <div class="col s12">
+            <h6 id="footer" >copyright@2018</h6>
+        </div>
+    </div>
+</div>
+
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="js/playlistUI.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/player.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
